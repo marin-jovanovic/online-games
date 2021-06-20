@@ -1,12 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis numquam, aspernatur deleniti tempore saepe quaerat accusantium, animi enim dolor adipisci cumque dignissimos suscipit, ad inventore tempora rerum fugiat laboriosam rem?</h1>
-</body>
-</html>
+
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis numquam, aspernatur deleniti tempore saepe quaerat accusantium, animi enim dolor adipisci cumque dignissimos suscipit, ad inventore tempora rerum fugiat laboriosam rem?</h1>
+
+<h1>hello {{temp_key}}</h1>
+
+<form action="add" method="post">
+
+    {% csrf_token %}
+
+
+    first name: 
+    <input type="text" name="firstname" id="firstname">
+    <br>
+
+    last name: 
+    <input type="text" name="lastname" id="lastname">
+    <br>
+
+    <input type="submit">
+
+</form>
+
+{% endblock %}
